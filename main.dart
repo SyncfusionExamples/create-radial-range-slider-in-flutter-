@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _getRadialRangeSlider();
   }
 
-  /// Update the new thumb value to the range.
+  /// Update the new thumb value for the range.
   void _handleFirstPointerValueChanged(double value) {
     if (value < _secondMarkerValue) {
       setState(() {
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  /// Cancel the dragging when pointer value reaching the axis end/start value, greater/less than another
+  /// Cancel the dragging when pointer value after reaching the axis end/start value, greater/less than another
   /// pointer value
   void _handleFirstPointerValueChanging(ValueChangingArgs args) {
     if (args.value < _secondMarkerValue) {
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  /// Cancel the dragging when pointer value reaching the axis end/start value, greater/less than another
+  /// Cancel the dragging when pointer value after reaching the axis end/start value or greater/less than another
   /// pointer value
   void _handleSecondPointerValueChanging(ValueChangingArgs args) {
     if (_firstMarkerValue < args.value) {
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pointers: <GaugePointer>[
             //First thumb
             MarkerPointer(
-              value: _firstMarkerValue, // We declared this in state class
+              value: _firstMarkerValue, 
               enableDragging: true,
               borderColor: Colors.green,
               borderWidth: 5,
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //Second thumb
             MarkerPointer(
-              value: _secondMarkerValue, // We declared this in state class
+              value: _secondMarkerValue, 
               color: Colors.white,
               enableDragging: true,
               borderColor: Colors.orange,
@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //Add the track color between thumbs
           ranges: <GaugeRange>[
             GaugeRange(
-                endValue: _secondMarkerValue, // We declared this in state class
+                endValue: _secondMarkerValue, 
                 sizeUnit: GaugeSizeUnit.factor,
                 startValue: _firstMarkerValue,
                 startWidth: 0.06,
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Text(
-                      '$_annotationValue', // We declared this in state class
+                      '$_annotationValue', 
                       style: TextStyle(
                           fontSize: 25,
                           fontFamily: 'Times',
